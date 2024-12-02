@@ -8,6 +8,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm, SurveyForm
 from .models import Survey, Question, Option, Response, Answer, User
+
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')
+
 # User Registration
 def register(request):
     if request.method == 'POST':
